@@ -5,6 +5,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoibmdvcmF5bW9uZCIsImEiOiJjanJ3YTEzaXMwYW1uM3lxeWdrcTNpOHVkIn0.Dg8RBz_o4oV38XHnyQyIWw'
 }).addTo(mymap);
+
 var popup = L.popup();
 
 function onMapClick(e) {

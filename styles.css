@@ -1,4 +1,4 @@
 #mapid{
-    height: $(window).height(); 
-    width: $(window).width(); 
+    height: $(window).height()/2; 
+    width: $(window).width()/2; 
 }
