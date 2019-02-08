@@ -1,1 +1,4 @@
-
+#mapid{
+    height: $(window).height(); 
+    width: $(window).width(); 
+}
