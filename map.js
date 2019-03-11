@@ -12,12 +12,13 @@ var popup = L.popup().setLatLng([0,0]);
 function onMapClick(e) {
     original
         .setLatLng(popup.getLatLng())
-        .setContent("You clicked the map at " + popup.getLatLng().toString() + "\n and " + e.latlng.toString())
+        .setContent("You want the distance from " + popup.getLatLng().toString() + "\n to " + e.latlng.toString())
         .openOn(mymap);
     var di = Math.round(original.getLatLng().distanceTo(e.latlng));
+    var mi = Math.round(original.getLatLng().distanceTo(e.latlng)/1.609);
     popup
         .setLatLng(e.latlng)
-        .setContent("Distance is " + di.toString() + " meters")
+        .setContent("Distance is " + di.toString() + " meters \n or " + mi.toString() +" miles");
         .addTo(mymap);
 }
 
