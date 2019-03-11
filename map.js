@@ -7,7 +7,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 var original = L.popup();
-var popup = L.popup();
+var popup = L.popup().setLatLng([0,0]);
 
 function onMapClick(e) {
     var di = popup.getLatLng().distanceTo(e.latlng);
