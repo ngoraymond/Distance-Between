@@ -10,9 +10,10 @@ var original = L.popup();
 var popup = L.popup();
 
 function onMapClick(e) {
+    var di = distance(popup.getLatLng(),e.latlng);
     original
         .setLatLng(popup.getLatLng())
-        .setContent("distance is" + distance(popup.getLatLng(),e.latlng).toString())
+        .setContent("distance is" + di.toString())
         .openOn(mymap);
     popup
         .setLatLng(e.latlng)
