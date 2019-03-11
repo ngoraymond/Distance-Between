@@ -8,11 +8,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var original = L.popup();
 var popup = L.popup();
-var marker;
 
 function onMapClick(e) {
-    original.setLatLng(popup.getLatLng());
-    marker = L.marker(popup.getLatLng()).openOn(mymap);
+    original
+        .setLatLng(popup.getLatLng())
+        .setContent("distance is" + distance(popup.getLatLng(),e.latlng).toString())
+        .openOn(mymap);
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
