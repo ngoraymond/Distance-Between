@@ -10,14 +10,14 @@ var original = L.popup();
 var popup = L.popup().setLatLng([0,0]);
 
 function onMapClick(e) {
-    var di = popup.getLatLng().distanceTo(e.latlng);
+    var di = Math.round(popup.getLatLng().distanceTo(e.latlng));
     original
         .setLatLng(popup.getLatLng())
-        .setContent("distance is" + di.toString())
+        .setContent("You clicked the map at " + popup.getLatLng().toString() + "\n and " + e.latlng.toString())
         .openOn(mymap);
     popup
         .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
+        .setContent("Distance is " + di.toString() + " meters")
         .addTo(mymap);
 }
 
