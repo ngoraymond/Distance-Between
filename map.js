@@ -10,7 +10,7 @@ var original = L.popup();
 var popup = L.popup();
 
 function onMapClick(e) {
-    var di = L.distance(popup.getLatLng(),e.latlng);
+    var di = popup.getLatLng().distanceTo(e.latlng);
     original
         .setLatLng(popup.getLatLng())
         .setContent("distance is" + di.toString())
