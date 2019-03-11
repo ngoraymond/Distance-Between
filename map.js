@@ -15,7 +15,7 @@ function onMapClick(e) {
         .setContent("You want the distance from " + popup.getLatLng().toString() + "\n to " + e.latlng.toString())
         .openOn(mymap);
     var di = Math.round(original.getLatLng().distanceTo(e.latlng));
-    var mi = Math.round(original.getLatLng().distanceTo(e.latlng)/1.609);
+    var mi = Math.round(original.getLatLng().distanceTo(e.latlng)/1609);
     popup
         .setLatLng(e.latlng)
         .setContent("Distance is " + di.toString() + " meters \n or " + mi.toString() +" miles")
