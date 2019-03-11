@@ -6,13 +6,17 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoibmdvcmF5bW9uZCIsImEiOiJjanJ3YTEzaXMwYW1uM3lxeWdrcTNpOHVkIn0.Dg8RBz_o4oV38XHnyQyIWw'
 }).addTo(mymap);
 
+var original = L.popup();
 var popup = L.popup();
+var marker;
 
 function onMapClick(e) {
+    original.setLatLng(popup.getLatLng());
+    marker = L.marker(popup.getLatLng()).openOn(mymap);
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
+        .addTo(mymap);
 }
 
 mymap.on('click', onMapClick);
