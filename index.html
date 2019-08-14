@@ -10,7 +10,7 @@
          integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
          crossorigin=""></script>
          <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
-         <link rel="manifest" href="/manifest.json">
+         <link rel="manifest" href="manifest.json">
          <meta name="apple-mobile-web-app-capable" content="yes">
          <meta name="apple-mobile-web-app-status-bar-style" content="black">
          <meta name="apple-mobile-web-app-title" content="Weather PWA">
@@ -39,6 +39,17 @@
             https://firebase.google.com/docs/web/setup#config-web-app -->
 
         <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+              navigator.serviceWorker.register('sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+              }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+              });
+            });
+          }
           // Your web app's Firebase configuration
           var firebaseConfig = {
             apiKey: "AIzaSyBqYacwh33F0kinyHr8arQGCoX_arObBn4",

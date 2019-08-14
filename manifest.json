@@ -2,7 +2,7 @@
   "name": "Mapper",
   "short_name": "420",
   "icons": [{
-    "src": "Map.png",
+      "src": "Map.png",
       "sizes": "128x128",
       "type": "image/png"
     }, {
