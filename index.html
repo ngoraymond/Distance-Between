@@ -41,12 +41,6 @@
     <body>
         <div id="mapid"></div>
         <script src = "map.js"></script>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#config-web-app -->
-
         <script>
           if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
@@ -59,18 +53,6 @@
               });
             });
           }
-          // Your web app's Firebase configuration
-          var firebaseConfig = {
-            apiKey: "AIzaSyBqYacwh33F0kinyHr8arQGCoX_arObBn4",
-            authDomain: "test-ba02e.firebaseapp.com",
-            databaseURL: "https://test-ba02e.firebaseio.com",
-            projectId: "test-ba02e",
-            storageBucket: "test-ba02e.appspot.com",
-            messagingSenderId: "317256087743",
-            appId: "1:317256087743:web:92339c36314d55a1"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
         </script>
     </body>
 </html>
